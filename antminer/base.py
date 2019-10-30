@@ -53,9 +53,9 @@ class Core(object):
         return response
 
     def read_response(self):
-	done = False
-	buf = self.conn.recv(4096)
-	while done is False:
+        done = False
+        buf = self.conn.recv(4096)
+        while done is False:
             more = self.conn.recv(4096)
             if not more:
                 done = True
