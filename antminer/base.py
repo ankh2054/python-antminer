@@ -97,16 +97,6 @@ class Core(object):
 
 class BaseClient(Core):
 
-    def stats(self):
-        """
-        Get stats for the miner.
-
-        Unfortunately, the API doesn't return valid JSON for this API response, which
-        requires us to do some light JSON correction before we load the response.
-        """
-        response = self.send_command('stats')
-        return json.loads(response.replace('"}{"', '"},{"'))
-
     def version(self):
         """
         Get basic hardware and software version information for a miner.
